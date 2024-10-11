@@ -1,7 +1,10 @@
 //!  MongoDB veritabanına bağlanır
 
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const connectDB = async () => {
-    await mongoose.connect("mongodb+srv://kkbracelik92:celikubra%40903@cluster0.oahyu.mongodb.net/quickbite").then(()=>console.log("DB Connected"));
-}
+    await mongoose.connect(process.env.MONGODB_URI).then(() => console.log("DB Connected"));
+};
