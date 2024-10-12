@@ -2,12 +2,12 @@ import foodModel from "../models/foodModel.js";
 import fs from "fs";
 
 // add food item
-
 //! yiyecekleri veritabanına eklemek için tanımlanan asenkron fonksiyon
 const addFood = async (req, res) => {
+  // Yüklenen dosyanın sunucuda kaydedildiği dosya adını tutar
   let image_filename = `${req.file.filename}`;
 
-  //! yeni bir yiyecek nesnesi oluşturur
+  //! bir foodModel nesnesi oluşturup veritabanına yeni food öğesi eklemek için kullanılıyor
   const food = new foodModel({
     name: req.body.name,
     description: req.body.description,
