@@ -9,7 +9,9 @@ const foodRouter = express.Router();
 
 //! yüklenen dosyaların nasıl depolanacağını belirler
 const storage = multer.diskStorage({
+  // Yüklenen dosyaların nereye kaydedileceğini belirler
   destination: "uploads",
+  // Yüklenen dosyaya özel bir isim verir
   filename: (req, file, cb) => {
     return cb(null, `${Date.now()}${file.originalname}`);
   },
@@ -18,7 +20,7 @@ const storage = multer.diskStorage({
 //! daha önce tanımlanan depolamayı kullanarak Multer middleware'ini oluşturur
 const upload = multer({ storage: storage });
 
-//! post isteği atınca ne olacağı belirlenir
+//! bir POST isteği /add yoluna geldiğinde ne yapılacağını tanımlıyor
 foodRouter.post("/add", upload.single("image"), addFood);
 
 export default foodRouter;
