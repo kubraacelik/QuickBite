@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js"
 import foodRouter from "./routes/foodRoute.js"
 import dotenv from "dotenv";
 
+//! .env dosyasını projenin içinde kullanır
 dotenv.config();
 
 // app config 
@@ -19,6 +20,7 @@ app.use(express.json())
 app.use(cors())
 
 // db connection
+//! veritabanına bağlandı
 connectDB();
 
 // api endpoints
