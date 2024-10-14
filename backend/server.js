@@ -26,6 +26,8 @@ connectDB();
 // api endpoints
 //! foodRouter'ı /api/food yoluna yönlendiren bir middleware ekler
 app.use("/api/food",foodRouter)
+//! resim uploads/sample.jpg olarak kaydedilmişse tarayıcıda images/sample.jpg adresinden erişilebilir
+app.use("/images",express.static("uploads"))
 
 //! "http://localhost:4000/" adresine gelen isteklerde "API Working" yanıtı döner
 app.get("/",(req,res)=>{
