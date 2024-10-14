@@ -1,5 +1,5 @@
 import express from "express";
-import { addFood } from "../controllers/foodController.js";
+import { addFood, listFood, removeFood } from "../controllers/foodController.js";
 import multer from "multer";
 
 //! express uygulaması için yeni bir router oluşturur
@@ -20,7 +20,11 @@ const storage = multer.diskStorage({
 //! daha önce tanımlanan depolamayı kullanarak Multer middleware'ini oluşturur
 const upload = multer({ storage: storage });
 
-//! bir POST isteği /add yoluna geldiğinde ne yapılacağını tanımlıyor
+//! post isteği /add yoluna gelince ürün ekler
 foodRouter.post("/add", upload.single("image"), addFood);
+//! get isteği /list yoluna gelince listFood çalışsın, tüm ürünler gelsin
+foodRouter.get("/list", listFood);
+//! post isteği /remove yoluna gelince ürün siler
+foodRouter.post("/remove", removeFood);
 
 export default foodRouter;
