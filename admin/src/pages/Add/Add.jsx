@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/assets";
 import axios from "axios";
+import { toast } from "react-toastify";
 
-const Add = () => {
-  const url = "http://localhost:4000";
-
+const Add = ({url}) => {
+  // kullanıcı tarafından yüklenen resmi tutar
   const [image, setImage] = useState(false);
 
+  // formdaki ürün bilgilerini tutar ve başlangıçtaki değerleri içerir
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -15,12 +16,14 @@ const Add = () => {
     category: "Salad",
   });
 
+  // formdaki herhangi bir alanın değerini günceller
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
 
+  // form gönderildiğinde çalışır
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -40,6 +43,9 @@ const Add = () => {
         category: "Salad",
       });
       setImage(false);
+      toast.success(response.data.message);
+    } else {
+      toast.error(response.data.message);
     }
   };
 
