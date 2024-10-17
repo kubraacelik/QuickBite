@@ -3,6 +3,7 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 import dotenv from "dotenv";
+import "dotenv/config"
 import userRouter from "./routes/userRoute.js";
 
 //! .env dosyasını projenin içinde kullanır
