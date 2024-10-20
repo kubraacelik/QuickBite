@@ -3,8 +3,9 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 import dotenv from "dotenv";
-import "dotenv/config"
+import "dotenv/config";
 import userRouter from "./routes/userRoute.js";
+import cartRouter from "./routes/cartRoute.js";
 
 //! .env dosyasını projenin içinde kullanır
 dotenv.config();
@@ -34,6 +35,9 @@ app.use("/images", express.static("uploads"));
 
 //! userRouter'ı /api/user yoluna yönlendiren bir middleware ekler
 app.use("/api/user", userRouter);
+
+//! //! cartRouter'ı /api/cart yoluna yönlendiren bir middleware ekler
+app.use("/api/cart", cartRouter);
 
 //! "http://localhost:4000/" adresine gelen isteklerde "API Working" yanıtı döner
 app.get("/", (req, res) => {
