@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import "dotenv/config";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 
 //! .env dosyasını projenin içinde kullanır
 dotenv.config();
@@ -38,6 +39,9 @@ app.use("/api/user", userRouter);
 
 //! //! cartRouter'ı /api/cart yoluna yönlendiren bir middleware ekler
 app.use("/api/cart", cartRouter);
+
+//! //! orderRouter'ı /api/order yoluna yönlendiren bir middleware ekler
+app.use("/api/order", orderRouter);
 
 //! "http://localhost:4000/" adresine gelen isteklerde "API Working" yanıtı döner
 app.get("/", (req, res) => {
