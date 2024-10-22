@@ -9,7 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // placing user model for frontend
 const placeOrder = async (req, res) => {
   // Siparişin başarılı veya başarısız olma durumlarına göre yönlendirme yapılacak olan frontend URL'si.
-  const frontend_url = "http://localhost:5173";
+  const frontend_url = "http://localhost:5174";
   try {
     // Yeni bir sipariş oluşturuluyor. req.body içindeki veriler kullanıcının frontend'den gönderdiği sipariş bilgilerini içeriyor.
     const newOrder = new orderModel({
@@ -74,8 +74,43 @@ const verifyOrder = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.josn({ success: false, message: "Error" });
+    res.json({ success: false, message: "Error" });
   }
 };
 
-export { placeOrder, verifyOrder };
+// user orders for frontend
+const userOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({ userId: req.body.userId });
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
+
+// listing orders for admin panel
+const listOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({});
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
+
+// api for updating order status
+const updateStatus = async (req, res) => {
+  try {
+    await orderModel.findByIdAndUpdate(req.body.orderId, {
+      status: req.body.status,
+    });
+    res.json({ success: true, message: "Status Updated" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
+
+export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus };
