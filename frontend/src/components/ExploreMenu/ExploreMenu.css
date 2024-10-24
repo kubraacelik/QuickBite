@@ -5,13 +5,16 @@
 }
 
 .explore-menu h1 {
-    color: #262626;
-    font-weight: 500;
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 2em;
+    text-align: center; 
 }
 
 .explore-menu-text {
-    max-width: 60%;
-    color: #808080;
+    max-width: 85%;
+    color: #7F8C8D;
+    font-size: 1.1em;
 }
 
 .explore-menu-list {
@@ -29,11 +32,17 @@
 }
 
 .explore-menu-list-item {
-    width: 7.5vw;
+    width: 8vw;
     min-width: 80px;
     cursor: pointer;
     border-radius: 50%;
     transition: 0.2s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.explore-menu-list-item:hover {
+    transform: scale(1.1);
 }
 
 .explore-menu-list-item p {

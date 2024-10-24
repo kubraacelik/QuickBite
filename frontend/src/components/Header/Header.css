@@ -1,61 +1,88 @@
 .header {
     height: 34vw;
     margin: 30px auto;
-    background: url("header_img.png") no-repeat;
-    background-size: contain;
+    background: url("header_image.jpg") no-repeat center center;
+    background-size: cover;
     position: relative;
+    margin-top: 170px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Eklenen koyu katman */
+    background-color: rgba(0, 0, 0, 0.3); 
+    background-blend-mode: darken; 
 }
 
 .header-contents {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 1.5vw;
     max-width: 50%;
-    bottom: 10%;
+    bottom: 15%;
     left: 6vw;
     animation: fadeIn 3s;
 }
 
 .header-contents h2 {
-    font-weight: 500;
-    color: white;
-    font-size: max(4.5vw, 22px);
+    font-weight: 600;
+    color: #fff; 
+    font-size: max(4vw, 24px); 
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
 }
 
 .header-contents p {
-    color: white;
-    font-size: 1.1vw;
+    color: #f0f0f0; 
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: 1.5;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
 }
 
 .header-contents button {
     border: none;
-    color: #747474;
+    color: #fff; 
+    background-color: #F65396; 
     font-weight: 500;
-    padding: 1vw 2.3vw;
-    background-color: white;
-    font-size: max(1vw, 13px);
+    padding: 1vw 2.5vw;
+    font-size: max(1.1vw, 14px); 
     border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-@media (max-width:1050px) {
+.header-contents button:hover {
+    background-color: #F65396; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); 
+}
+
+@media (max-width: 1050px) {
     .header-contents {
-        max-width: 45%;
+        max-width: 50%;
+    }
+
+    .header-contents h2 {
+        font-size: max(4.5vw, 22px);
     }
 }
 
-@media (max-width:750px) {
+@media (max-width: 750px) {
     .header-contents {
-        max-width: 65%;
+        max-width: 70%;
+    }
+
+    .header-contents h2 {
+        font-size: max(5vw, 20px);
     }
 
     .header-contents p {
         display: none;
     }
 
-    .header-contents button{
-        padding: 2vw 4vw;
+    .header-contents button {
+        padding: 2vw 5vw;
+        font-size: max(1.3vw, 14px);
     }
 }
