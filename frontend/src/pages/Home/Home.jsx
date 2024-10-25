@@ -6,6 +6,9 @@ import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 import AppDownload from "../../components/AppDownload/AppDownload";
 
 const Home = () => {
+  // Kullanıcılar, ExploreMenu bileşeni aracılığıyla kategorileri seçebilir ve bu seçim FoodDisplay bileşenine iletilir, 
+  // böylece kullanıcılara seçilen kategoriye ait yemekler sunulur. useState hook'u, kategori durumunu yönetmek için kullanılır 
+  // ve bu durum bileşenler arasında veri akışını sağlar.
   const [category, setCategory] = useState("All");
 
   return (
