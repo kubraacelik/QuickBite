@@ -1,5 +1,8 @@
 import jwt from "jsonwebtoken";
 
+// Bu kod, kullanıcıdan gelen istekteki token'ı doğrulamak için kullanılır. Token geçersizse veya yoksa, kullanıcıya 
+// yetkisiz olduğunu belirten bir yanıt döner. Token geçerliyse, kullanıcı kimliği req.body.userId olarak eklenir ve 
+// işlem bir sonraki adıma geçer.
 const authMiddleware = async (req, res, next) => {
   const { token } = req.headers;
 
