@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-//! //! kullanıcıların özelliklerini tanımlayan bir Mongoose şeması
+//! kullanıcıların özelliklerini tanımlayan bir Mongoose şeması
 const userSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },

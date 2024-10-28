@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//! //! siparişlerin özelliklerini tanımlayan bir Mongoose şeması
 const orderSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   items: { type: Array, required: true },
@@ -10,6 +11,7 @@ const orderSchema = new mongoose.Schema({
   payment: { type: Boolean, default: false },
 });
 
+//! model, veritabanındaki belgelerle etkileşim kurar
 const orderModel = mongoose.models.order || mongoose.model("order", orderSchema);
 
 export default orderModel;
