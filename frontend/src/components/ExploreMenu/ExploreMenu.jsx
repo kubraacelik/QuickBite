@@ -2,6 +2,7 @@ import React from "react";
 import "./ExploreMenu.css";
 import { menu_list } from "../../assets/assets";
 
+// category, mevcut kategori durumunu, setCategory ise kategori durumunu güncellemek için kullanılan bir fonksiyondur.  
 const ExploreMenu = ({ category, setCategory }) => {
   return (
     <div className="explore-menu">
@@ -14,6 +15,7 @@ const ExploreMenu = ({ category, setCategory }) => {
       <div className="explore-menu-list">
         {menu_list.map((item, index) => {
           return (
+            // Eğer kategori, tıklanan öğenin adıyla eşleşiyorsa kategori "All" olarak değiştirilir, yoksa kategori tıklanan öğenin adıyla güncellenir.
             <div
               onClick={() =>
                 setCategory((prev) =>

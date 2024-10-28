@@ -53,6 +53,8 @@ const LoginPopup = ({ setShowLogin }) => {
             alt=""
           />
         </div>
+        {/* currState kontrol edilerek, eğer "Sign Up" durumundaysa name alanı da gösterilir.
+        email ve password alanları her iki durumda da zorunludur. */}
         <div className="login-popup-inputs">
           {currState === "Login" ? (
             <></>
