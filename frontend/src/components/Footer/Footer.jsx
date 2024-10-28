@@ -9,10 +9,9 @@ const Footer = () => {
         <div className="footer-content-left">
           <img src={assets.logo} alt="" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ad
-            quod reprehenderit ea aliquid illo quos corporis. Ipsam aspernatur
-            voluptatibus, rem exercitationem molestias quasi in pariatur! Cumque
-            saepe est minima.
+            Customer satisfaction comes first for us. We serve delicious food
+            using high quality ingredients. We are always here to provide the
+            best service.
           </p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />
@@ -33,13 +32,13 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+1-212-456-7890</li>
-            <li>contact@tomato.com</li>
+            <li>contact@quickbite.com</li>
           </ul>
         </div>
       </div>
       <hr />
       <p className="footer-copyright">
-        Copyright 2024 @ Tomato.com - All Right Reserved.
+        Copyright 2024 @ QuickBite.com - All Right Reserved.
       </p>
     </div>
   );
