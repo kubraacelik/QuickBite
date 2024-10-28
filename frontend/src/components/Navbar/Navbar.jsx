@@ -11,6 +11,7 @@ const Navbar = ({ setShowLogin }) => {
 
   const navigate = useNavigate();
 
+  // token'ı localStorage'dan siler, token durumunu boş bir dizeye ayarlar, kullanıcıyı anasayfaya yönlendirir.
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
@@ -22,6 +23,7 @@ const Navbar = ({ setShowLogin }) => {
       <Link to="/">
         <img src={assets.logo} alt="" className="logo" />
       </Link>
+
       <ul className="navbar-menu">
         <Link
           to="/"
@@ -31,7 +33,7 @@ const Navbar = ({ setShowLogin }) => {
           home
         </Link>
         <a
-          href="#explore-menu"
+          href="#food-display"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
@@ -52,14 +54,17 @@ const Navbar = ({ setShowLogin }) => {
           contact us
         </a>
       </ul>
+
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
+
         <div className="navbar-search-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} alt="" />
           </Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
+        
         {!token ? (
           <button onClick={() => setShowLogin(true)}>sign in</button>
         ) : (

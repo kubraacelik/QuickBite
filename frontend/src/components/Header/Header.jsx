@@ -12,8 +12,9 @@ const Header = () => {
           unforgettable dining experience with flavors that delight, delivered
           right to your door.
         </p>
-
-        <button>View Menu</button>
+        <button>
+          <a href="#food-display">View Menu</a>
+        </button>
       </div>
     </div>
   );

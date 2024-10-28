@@ -9,6 +9,7 @@ const FoodDisplay = ({ category }) => {
   return (
     <div className="food-display" id="food-display">
       <h2>Top Dishes Near You</h2>
+
       <div className="food-display-list">
         {food_list
           .filter(item => category === "All" || category === item.category)
@@ -23,6 +24,7 @@ const FoodDisplay = ({ category }) => {
             />
           ))}
       </div>
+      
     </div>
   );
 };
