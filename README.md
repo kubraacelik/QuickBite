@@ -24,3 +24,24 @@ While React JS is preferred to create the user interface, Node.js is used as a p
 ![Ekran görüntüsü 2024-10-28 141745](https://github.com/user-attachments/assets/f35cb709-656e-4d4d-b90c-ae1401ed4b15)
 ![Ekran görüntüsü 2024-10-28 144315](https://github.com/user-attachments/assets/4c85945e-cbd8-442d-b406-333c767fffc8)
 ![Ekran görüntüsü 2024-10-28 144624](https://github.com/user-attachments/assets/056150bb-41a6-484d-a4c6-f74ef61a4de9)
+
+## Run the Application
+
+Start the back-end server:
+
+```bash
+cd backend
+npm start
+```
+Start the front-end server:
+
+```bash
+cd frontend
+npm run dev
+```
+Start the admin server:
+
+```bash
+cd admin
+npm run dev
+```
